@@ -1,12 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './app';
 
-let container = document.createElement('div')
-container.id = 'yourwelcome'
-document.body.appendChild(container)
+const container = document.createElement('div');
+container.id = 'yourwelcome';
+document.body.appendChild(container);
 
 ReactDOM.render(
   <App />,
   document.getElementById('yourwelcome')
-)
+);
