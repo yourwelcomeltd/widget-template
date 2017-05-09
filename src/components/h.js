@@ -5,7 +5,7 @@ export default function H() {
   return (
     <Translate
       component="h1"
-      content="helloWorld"
+      content="hello.world"
     />
   );
 }
