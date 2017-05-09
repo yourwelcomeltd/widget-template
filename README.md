@@ -1,2 +1,2 @@
-# widget-template
-initial setup for building widgets
+# YourWelcome widgets template
+base template for building widgets
