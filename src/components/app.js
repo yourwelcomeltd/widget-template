@@ -1,10 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'whatwg-fetch';
+import React, { Component } from 'react';
+import { H } from './';
 
-const _compose = (f,g) => (x) => g(f(x));
+const _compose = (f, g) => x => g(f(x)); // eslint-disable-line
 
-class App extends React.Component {
+export default class App extends Component {
   componentDidMount() {
     const ph = document.body.querySelectorAll('#yourwelcomewidget');
     const root = document.querySelectorAll('#yourwelcome')[0];
@@ -16,10 +15,8 @@ class App extends React.Component {
   render() {
     return (
       <div style={{ background: 'green' }}>
-        <h1>Welcome to YourWelcome </h1>
+        <H />
       </div>
-    )
+    );
   }
 }
-
-export default App;
