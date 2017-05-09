@@ -1,23 +1,23 @@
-const path = require('path')
-const webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './src/main.js',
   output: {
     path: __dirname + '/public',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   devServer: {
     inline: true,
     contentBase: './src',
-    port: 3333
+    port: process.env.WIDGET_PORT || 3333,
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
-      }
-    })
+      },
+    }),
   ],
   module: {
     loaders: [
@@ -27,13 +27,13 @@ module.exports = {
         loader: 'babel-loader',
         query: {
           presets: ['es2015', 'react', 'stage-2'],
-          plugins: ['transform-class-properties']
-        }
+          plugins: ['transform-class-properties'],
+        },
       },
       {
         test: /\.json$/,
-        loader: 'json-loader'
-      }
-    ]
-  }
-}
+        loader: 'json-loader',
+      },
+    ],
+  },
+};
